@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const color = require("gradient-string");
 const chalk = require("chalk");
-const config = require("../config.json");
+const config = require("../Jubayer.json");
 const font = require("fontstyles");
 const axios = require("axios");
 
@@ -28,7 +28,7 @@ function loadingBar(duration, color) {
 
     if (currentLength >= totalLength) {
       clearInterval(interval);
-      console.log("\n\n" + chalk.bold.dim("CHAT LOG:")); // Move to the next line after loading
+      console.log("\n\n" + chalk.bold.dim("JUBAYER CHAT LOG:")); // Move to the next line after loading
     }
   }, duration / totalLength); // Adjust the duration to your needs
 }
@@ -71,7 +71,7 @@ const asciiMappings = {
 
 // Generates ASCII art based on provided text
 function generateAsciiArt(text) {
-  const title = text || "PAGEBOT";
+  const title = text || "JUBAYER BOT";
   const lines = ["  ", "  "];
   for (const char of title.toLowerCase()) {
     const mapping = asciiMappings[char] || { upper: "  ", lower: "  " };
@@ -192,7 +192,7 @@ fs.readFile('./config.json', 'utf8', (err, data) => {
   if (err) return console.error(err);
   const config = JSON.parse(data);
   config.THEME_SETUP.HTML = htmlColors;
-  fs.writeFile('./config.json', JSON.stringify(config, null, 2), err => err ? console.error(err) : /*console.log('config.json updated!')*/ "" );
+  fs.writeFile('./config.json', JSON.stringify(config, null, 2), err => err ? console.error(err) : /* console.log('Jubayer.json updated!')*/ "" );
 });
 
 function getTheme() {
@@ -222,7 +222,7 @@ async function checkForUpdates() {
   const localVersion = localPackage.version;
 
   // URL for remote package.json
-  const remotePackageUrl = "https://raw.githubusercontent.com/YANDEVA/Pagebot/refs/heads/main/package.json";
+  const remotePackageUrl = "https://raw.githubusercontent.com/GR-GHOST-R/Jubayer/refs/heads/main/package.json";
 
   try {
     // Fetch remote package.json
@@ -257,7 +257,7 @@ async function checkForUpdates() {
       } else {
         setTimeout(() => {
           console.log(`${colorGradient(`SYSTEM:`)} A new version is available! Local: ${colorGradient(localVersion)}, Remote: ${colorGradient(remoteVersion)}`);
-          console.log(`${colorGradient(`SYSTEM:`)} Update now! ${colorGradient(`https://github.com/YANDEVA/Pagebot`)}`);
+          console.log(`${colorGradient(`SYSTEM:`)} Update now! ${colorGradient(`https://github.com/GR-GHOST-R/Jubayer`)}`);
         }, 4500);
       }
     }
@@ -331,7 +331,7 @@ function log() {
         let missingProperties = [];
         // Check for missing properties in event
         if (!event.config) {
-          missingProperties.push("config object");
+          missingProperties.push("Jubayer object");
         } else {
           if (typeof event.config.name !== "string") missingProperties.push("name");
           if (typeof event.config.selfListen !== "boolean") missingProperties.push("selfListen");
