@@ -1,4 +1,4 @@
-const config = require("./config.json");
+const config = require("./Jubayer.json");
 const utils = require("./modules/utils");
 const fs = require("fs");
 
