@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const config = require("../config.json");
+const config = require("../Jubayer.json");
 const { getTheme } = require("../website/web.js");
 const cooldowns = {}; // Track cooldowns for each user and command
 
