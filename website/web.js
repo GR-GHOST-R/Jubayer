@@ -188,11 +188,11 @@ switch (theme) {
     logUnknownTheme(config.THEME_SETUP.THEME);
 }
 
-fs.readFile('./config.json', 'utf8', (err, data) => {
+fs.readFile('./Jubayer.json', 'utf8', (err, data) => {
   if (err) return console.error(err);
   const config = JSON.parse(data);
   config.THEME_SETUP.HTML = htmlColors;
-  fs.writeFile('./config.json', JSON.stringify(config, null, 2), err => err ? console.error(err) : /* console.log('Jubayer.json updated!')*/ "" );
+  fs.writeFile('./Jubayer.json', JSON.stringify(config, null, 2), err => err ? console.error(err) : /* console.log('Jubayer.json updated!')*/ "" );
 });
 
 function getTheme() {
@@ -363,7 +363,7 @@ function log() {
 }
 
 function verify(req, res) {
-  const config = JSON.parse(fs.readFileSync("./config.json"), "utf8");
+  const config = JSON.parse(fs.readFileSync("./Jubayer.json"), "utf8");
   const mode = req.query["hub.mode"];
   const token = req.query["hub.verify_token"];
   const challenge = req.query["hub.challenge"];
