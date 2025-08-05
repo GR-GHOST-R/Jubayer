@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const bgElement = document.querySelector('.bg');  // Use querySelector instead of getElementById
 
   // Fetch the config data
-  fetch('../config.json')
+  fetch('../Jubayer.json')
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -21,6 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
       bgElement.style.backgroundImage = newGradient;
     })
     .catch(error => {
-      console.error('Error loading config.json:', error);
+      console.error('Error loading Jubayer.json:', error);
     });
 });
