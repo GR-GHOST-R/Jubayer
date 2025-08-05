@@ -1,5 +1,5 @@
 module.exports = async function (event) {
-  const config = require("../config.json");
+  const config = require("../Jubayer.json");
   const api = {};
   const scripts = [
     "graph",
